@@ -44,7 +44,7 @@
                 <td>{{number_format($item->price,2)}}</td>
                 <td>
                     <a href="{{URL::to('product/edit/'.$item->id)}}" class="btn btn-info"><i class="fa fa-edit"></i> แก้ไข</a>
-                    <a href="{{URL::to('product/remove/'.$item->id)}}" class="btn btn-delete btn-danger" id-delete="{{ $item->id }}">
+                    <a href="#" class="btn btn-delete btn-danger" id-delete="{{ $item->id }}">
                         <i class="fa fa-trash"></i> ลบ</a>
                 </td>
             </tr>

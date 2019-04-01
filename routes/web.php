@@ -29,11 +29,16 @@ Route::get('/', function () {
 
 //after Midterm
 Route::get('/home','HomeController@index')->name('home');
+Route::get('/chart','HomeController@view_chart')->middleware('auth');
 
 Route::get('/cart/view','CartController@viewCart');
 Route::get('/cart/add/{id}','CartController@addToCart');
 Route::get('/cart/update/{id}/{qty}','CartController@updateCart');
 Route::get('/cart/delete/{id}','CartController@deleteCart');
+Route::get('/cart/checkout','CartController@checkout');
+Route::get('/cart/complete','CartController@complete');
+Route::get('/cart/finish','CartController@finish_order');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

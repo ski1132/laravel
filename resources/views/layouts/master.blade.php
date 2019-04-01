@@ -16,6 +16,7 @@
     <script src="{{asset('js/angular.min.js')}}"></script>
     <script src="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}"></script>
     <script src="{{asset('vendor/toastr/toastr.min.js')}}"></script>
+    <script src="{{asset('vendor/chartjs/Chart.min.js')}}"></script>
 </head>
 
 <body>
@@ -31,7 +32,7 @@
                         
                     @else
                         <li><a href="{{ URL::to('product') }}">จัดการข้อมูลสินค้า</a></li>
-                        <li><a href="#">รายงาน</a></li>
+                        <li><a href="{{ URL::to('chart') }}">รายงาน</a></li>
                     @endguest
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
