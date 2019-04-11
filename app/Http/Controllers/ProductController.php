@@ -5,7 +5,7 @@ use App\Product;
 use App\Category;
 use Input,Config, Validator,image;
 use Illuminate\Http\Request;
-use Auth;
+use Auth,Session;
 class ProductController extends Controller
 {
     var $rp;
@@ -150,6 +150,7 @@ class ProductController extends Controller
     public function logout()
     {
         Auth::logout();
+        Session::flush();
         return redirect('/login');
     }
 }

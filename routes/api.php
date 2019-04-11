@@ -16,8 +16,11 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+                    // insert "/api/" before every URL !!!!
 Route::get('/product','Api\ProductControllerApi@product_list');
 Route::get('/product/{category_id?}','Api\ProductControllerApi@product_list')->middleware('auth:api');
 Route::post('/product/search','Api\ProductControllerApi@product_search');
 Route::get('/category','Api\CategoryControllerApi@category_list');
+Route::get('/product/chart/list','Api\ProductControllerApi@get_product_chart');
+Route::get('/category/chart/list','Api\ProductControllerApi@get_Category_chart');
 

@@ -40,11 +40,7 @@
                             <li><a href="{{ route('login') }}"> login </a></li>
                             <li><a href="{{ route('register') }}"> ลงทะเบียน </a></li>
                         @else
-                            <li class="dropdown">
-                                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                                    {{ Auth::user()->name }} <span class="carest"></span>
-                                </a>
-                            </li>
+                            <li><a> {{ Auth::user()->name }} </a></li>
                             <li><a href="{{ route('logout') }}"> logout </a></li>
                             <li><a href="{{ URL::to('cart/view') }}"><i class="fa fa-shopping-cart"></i> ตะกร้า 
                                 <span class="label label-danger"> {!! count(Session::get('cart_items')) !!}</span></a></li>

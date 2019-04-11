@@ -73,8 +73,8 @@
 
                 productService.getProductList(category_id).then(function (res)
                 {
-                    if(!res.data.ok)
-                        return;
+                    //if(!res.data.ok) return; ถ้าไม่มีข้อมูลจะย้อนกลับไป
+                    
                     $scope.products = res.data.products;
                 });
             };
@@ -112,9 +112,9 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="list-group">
-                    <a href="" class="list-group-item" ng-click="getProductList(null)"
+                    <a href="#" class="list-group-item" ng-click="getProductList(null)"
                     ng-class="{'active': category == null}"> ทั้งหมด </a>
-                    <a href="" class="list-group-item" ng-repeat="c in categories"
+                    <a href="#" class="list-group-item" ng-repeat="c in categories"
                     ng-click="getProductList(c)" ng-class="{'active': category.id == c.id}">@{c.name}</a>
                 </div>
             </div>
