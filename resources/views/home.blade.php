@@ -15,14 +15,6 @@
         {
             $interpolateProvider.startSymbol('@{').endSymbol('}');
         });
-        app.controller('ctrl',function($scope)
-        {
-            $scope.products = [
-                {'code' : 'P001' , 'name' : 'ชุดแข่งสีดำ Size L', 'price':'1500.00' , 'qty':'5'},
-                {'code' : 'P002' , 'name' : 'หมวกกันน็อครุ่น SM-220', 'price':'1400.00' , 'qty':'0'},
-                {'code' : 'P003' , 'name' : 'มิเตอร์วัดความเร็ว', 'price':'1450.00' , 'qty':'2'},   
-            ];
-        });
         app.service('productService',function($http) 
         {
             this.searchProduct = function(query)
@@ -74,11 +66,11 @@
                 productService.getProductList(category_id).then(function (res)
                 {
                     //if(!res.data.ok) return; ถ้าไม่มีข้อมูลจะย้อนกลับไป
-                    
+
                     $scope.products = res.data.products;
                 });
             };
-            $scope.getProductList(null);
+            
 
             $scope.categories = [];
             $scope.getCategoryList = function()
@@ -90,6 +82,7 @@
                     $scope.categories = res.data.categories;
                 });
             };
+            $scope.getProductList(null);
             $scope.getCategoryList();
 
             
